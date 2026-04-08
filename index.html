@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khoa Sư Phạm - Đại học Đà Lạt</title>
     
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/330/330996.png" type="image/png">
+    <link rel="icon" href="logo.jpg" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,6 +23,11 @@
         /* Căn chỉnh lại để khi cuộn không bị thanh menu che mất tiêu đề */
         section {
             scroll-margin-top: 70px;
+        }
+        /* Hiệu ứng hover cho card */
+        .card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -49,7 +57,7 @@
         <div class="mask w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>
         
         <div class="d-flex justify-content-center align-items-center h-100 position-relative">
-            <div class="text-white">
+            <div class="text-white" data-aos="zoom-in" data-aos-duration="1000">
                 <h1 class="mb-3 fw-bold display-4">Khoa Sư Phạm - Đại Học Đà Lạt</h1>
                 <h4 class="mb-4">Nơi ươm mầm những người lái đò tương lai</h4>
                 <a class="btn btn-success btn-lg shadow" href="#gioi-thieu" role="button">Khám phá ngay</a>
@@ -59,7 +67,7 @@
 
     <section id="gioi-thieu" class="container my-5">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
                 <h2 class="fw-bold text-success mb-3">Về Khoa Sư Phạm</h2>
                 <h5 class="text-secondary mb-4">Trường Đại học Đà Lạt</h5>
                 <p class="lead">Khoa Sư phạm - Trường Đại học Đà Lạt tự hào là cái nôi đào tạo giáo viên chất lượng cao cho khu vực Tây Nguyên và Nam Trung Bộ.</p>
@@ -67,18 +75,18 @@
                 <a href="https://sp.dlu.edu.vn/" target="_blank" class="btn btn-primary mt-3">Đọc thêm lịch sử Khoa</a>
             </div>
             
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
                 <img src="gioithieu.jpg" alt="Hoạt động Khoa Sư Phạm" class="img-fluid rounded shadow-sm">
             </div>
         </div>
     </section>
 
     <section id="nganh-dao-tao" class="container my-5">
-        <h2 class="text-center text-success mb-5 fw-bold">Các Ngành Đào Tạo Nổi Bật</h2>
+        <h2 class="text-center text-success mb-5 fw-bold" data-aos="fade-up">Các Ngành Đào Tạo Nổi Bật</h2>
         <div class="row g-4">
             
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow-sm border-0">
                     <img src="sp_toan.jpg" class="card-img-top" alt="Sư phạm Toán" style="height: 250px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-primary">Sư phạm Toán học</h5>
@@ -88,8 +96,8 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow-sm border-0">
                     <img src="sp_van.jpg" class="card-img-top" alt="Sư phạm Ngữ Văn" style="height: 250px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-primary">Sư phạm Ngữ văn</h5>
@@ -99,8 +107,8 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow-sm border-0">
                     <img src="sp_tienganh.jpg" class="card-img-top" alt="Sư phạm Tiếng Anh" style="height: 250px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-primary">Sư phạm Tiếng Anh</h5>
@@ -112,14 +120,15 @@
             
         </div>
     </section>  
-<section id="tin-tuc" class="container my-5 py-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <section id="tin-tuc" class="container my-5 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-right">
             <h2 class="text-success fw-bold mb-0">Tin Tức & Sự Kiện</h2>
             <a href="https://dlu.edu.vn/tin-tuc/" target="_blank" class="btn btn-outline-success btn-sm">Xem tất cả trên DLU.edu.vn</a>
         </div>
         
         <div class="row g-4">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm">
                     <a href="https://dlu.edu.vn/tuyen-sinh-dai-hoc-2025-danh-sach-thi-sinh-trung-tuyen-he-chinh-quy/" target="_blank" class="text-decoration-none text-dark">
                         <img src="ds.jpg" class="card-img-top rounded-top" alt="Danh sách trúng tuyển" style="height: 200px; object-fit: cover;">
@@ -132,7 +141,7 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="200">
                 <div class="card h-100 border-0 shadow-sm">
                     <a href="https://dlu.edu.vn/truong-dai-hoc-da-lat-to-chuc-hoi-thao-chien-luoc-phat-trien-truong-giai-doan-2025-2030-tam-nhin-den-nam-2045/" target="_blank" class="text-decoration-none text-dark">
                         <img src="hoithaochienluoc.jpg" class="card-img-top rounded-top" alt="Hội thảo chiến lược DLU" style="height: 200px; object-fit: cover;">
@@ -145,7 +154,7 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="300">
                 <div class="card h-100 border-0 shadow-sm">
                     <a href="https://dlu.edu.vn/chuong-trinh-tu-van-mua-thi-2025-tai-truong-dai-hoc-da-lat/" target="_blank" class="text-decoration-none text-dark">
                         <img src="tuvan.jpg" class="card-img-top rounded-top" alt="Tư vấn mùa thi" style="height: 200px; object-fit: cover;">
@@ -160,15 +169,11 @@
         </div>
     </section>
 
-   <footer  class="bg-dark text-white pt-5 pb-4 mt-5">
-        <div class="container">
-            <div class="row">
-                
-               <section id="lien-he" class="container my-5 py-5">
-        <h2 class="text-center text-success fw-bold mb-5">Liên Hệ Với Chúng Tôi</h2>
+    <section id="lien-he" class="container my-5 py-5 overflow-hidden">
+        <h2 class="text-center text-success fw-bold mb-5" data-aos="fade-down">Liên Hệ Với Chúng Tôi</h2>
         <div class="row g-5 align-items-center">
             
-            <div class="col-lg-5">
+            <div class="col-lg-5" data-aos="fade-right">
                 <h4 class="fw-bold mb-4 text-primary">Khoa Sư Phạm - Trường Đại học Đà Lạt</h4>
                 <p class="text-secondary mb-4">Nếu bạn có bất kỳ thắc mắc nào về thông tin tuyển sinh, chương trình đào tạo hay các hoạt động của Khoa, đừng ngần ngại gửi tin nhắn cho chúng tôi.</p>
                 
@@ -179,7 +184,7 @@
                 </ul>
             </div>
             
-            <div class="col-lg-7">
+            <div class="col-lg-7" data-aos="fade-left">
                 <form class="p-4 p-md-5 border rounded-4 shadow-sm bg-light">
                     <div class="row mb-3">
                         <div class="col-md-6">
@@ -207,12 +212,21 @@
 
         </div>
     </section>
-                    
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row" data-aos="fade-up" data-aos-duration="1000">
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold text-success mb-3">Khoa Sư Phạm - DLU</h5>
+                    <p><strong>Địa chỉ:</strong> Số 1 Phù Đổng Thiên Vương, Phường 8, TP. Đà Lạt, Lâm Đồng</p>
+                    <p><strong>Điện thoại:</strong> 0263 3822 246</p>
+                    <p><strong>Email:</strong> khoasupham@dlu.edu.vn</p>
                     <div class="mt-4">
                         <h6 class="text-uppercase fw-bold mb-3">Kết nối với chúng tôi</h6>
-                        <a href="https://www.facebook.com/DalatUni" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">Facebook</a>
-                        <a href="https://www.youtube.com/channel/UCeeZZ09hGWUY0zi6R11X07w" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">Youtube</a>
-                        <a href="https://zalo.me/02633822246" target="_blank" class="btn btn-outline-light btn-sm mb-2">Zalo</a>
+                        <a href="https://www.facebook.com/DalatUni" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2"><i class="bi bi-facebook"></i> Facebook</a>
+                        <a href="https://www.youtube.com/channel/UCeeZZ09hGWUY0zi6R11X07w" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2"><i class="bi bi-youtube text-danger"></i> Youtube</a>
+                        <a href="https://zalo.me/02633822246" target="_blank" class="btn btn-outline-light btn-sm mb-2"><i class="bi bi-chat-dots-fill text-primary"></i> Zalo</a>
                     </div>
                 </div>
 
@@ -244,6 +258,16 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Kích hoạt hiệu ứng AOS
+        AOS.init({
+            once: true, // Hiệu ứng chỉ chạy 1 lần khi cuộn tới
+            offset: 100 // Khoảng cách (px) từ dưới cùng màn hình lên phần tử để bắt đầu hiệu ứng
+        });
+    </script>
 </body>
 </html>
