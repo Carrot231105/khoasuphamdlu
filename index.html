@@ -29,6 +29,32 @@
             transform: translateY(-5px);
             transition: all 0.3s ease;
         }
+/* Nút cuộn lên đầu trang */
+        #btnBackToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none; /* Ẩn đi mặc định */
+            z-index: 999;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+/* Hiệu ứng cho Thư viện ảnh */
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px; /* Bo góc cho khung ảnh */
+        }
+        .gallery-item img {
+            transition: transform 0.5s ease; /* Thời gian phóng to mượt mà */
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Cắt cúp ảnh cho vừa khung mà không bị méo */
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Phóng to ảnh lên 10% khi rê chuột vào */
+        }
     </style>
 </head>
 <body>
@@ -120,6 +146,41 @@
             
         </div>
     </section>  
+<section id="thu-vien-anh" class="container my-5 py-4">
+        <h2 class="text-center text-success fw-bold mb-5" data-aos="fade-up">Thư Viện Ảnh Hoạt Động</h2>
+        <div class="row g-4">
+            <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="gallery-item shadow-sm">
+                    <img src="tv1.jpg" alt="Hoạt động 1">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="gallery-item shadow-sm">
+                    <img src="tv2.jpg" alt="Hoạt động 2">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                <div class="gallery-item shadow-sm">
+                    <img src="tv3.jpg" alt="Hoạt động 3">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+                <div class="gallery-item shadow-sm">
+                    <img src="tv4.jpg" alt="Hoạt động 4">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="500">
+                <div class="gallery-item shadow-sm">
+                    <img src="tv5.jpg" alt="Hoạt động 5">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="600">
+                <div class="gallery-item shadow-sm">
+                    <img src="tv6.jpg" alt="Hoạt động 6">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="tin-tuc" class="container my-5 py-4">
         <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-right">
@@ -259,15 +320,34 @@
         </div>
     </footer>
 
+   <button id="btnBackToTop" class="btn btn-success shadow" title="Lên đầu trang">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
-        // Kích hoạt hiệu ứng AOS
+        // 1. Kích hoạt hiệu ứng AOS (Đã thêm lại dấu ngoặc đóng bị thiếu)
         AOS.init({
-            once: true, // Hiệu ứng chỉ chạy 1 lần khi cuộn tới
-            offset: 100 // Khoảng cách (px) từ dưới cùng màn hình lên phần tử để bắt đầu hiệu ứng
-        });
+            once: true, 
+            offset: 100 
+        }); 
+
+        // 2. Xử lý nút Back to Top
+        let mybutton = document.getElementById("btnBackToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        mybutton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     </script>
 </body>
 </html>
